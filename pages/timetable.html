@@ -122,6 +122,76 @@
       .timetable td:nth-child(4) {
         text-align: center;
       }
+      /* ==============================
+   Mobile Responsiveness
+   ============================== */
+      @media (max-width: 768px) {
+        .timetable {
+          font-size: 0.9em;
+          box-shadow: none;
+          border-radius: 0;
+        }
+
+        /* Hide table header */
+        .timetable thead {
+          display: none;
+        }
+
+        /* Convert rows to cards */
+        .timetable tr {
+          display: block;
+          margin-bottom: 18px;
+          background: #ffffff;
+          border-radius: 10px;
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .timetable td {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 12px 14px;
+          border-bottom: 1px solid #edf0f5;
+          text-align: left !important;
+        }
+
+        .timetable td:last-child {
+          border-bottom: none;
+        }
+
+        /* Label each cell */
+        .timetable td::before {
+          content: attr(data-label);
+          font-weight: 600;
+          color: #0f2a44;
+        }
+
+        /* Day separator */
+        .day-row {
+          display: block;
+          background: none !important;
+          box-shadow: none !important;
+        }
+
+        .day-row td {
+          display: block;
+          text-align: center;
+          font-weight: 700;
+          padding: 14px;
+          background: #e6eefc;
+          border-radius: 10px;
+        }
+
+        /* Search box mobile */
+        .search-box {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .search-box input {
+          width: 100%;
+        }
+      }
     </style>
     <script src="../js/timetable-filter.js" defer></script>
   </head>
